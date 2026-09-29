@@ -1,0 +1,993 @@
+@import "tailwindcss";
+
+/* =========================================================
+   TAILWIND DARK MODE
+   IMPORTANT:
+   Tailwind dark: classes are controlled by .dark on <html>
+========================================================= */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   TWINLEARN AI — WARM EDITORIAL / PREMIUM THEME
+========================================================= */
+
+:root {
+  --background: #f7f3ea;
+  --foreground: #3e4038;
+
+  --card: #fffdf8;
+  --card-foreground: #3e4038;
+
+  --primary: #6f8061;
+  --primary-hover: #5d6e51;
+  --primary-light: #e6ecdf;
+
+  --secondary: #c98262;
+  --secondary-light: #f1ddd2;
+
+  --muted: #eee9df;
+  --muted-foreground: #7d7d72;
+
+  --accent: #e8dfcf;
+  --accent-dark: #d8cdbb;
+
+  --border: #e4ded2;
+
+  --success: #71856a;
+  --warning: #c98262;
+  --danger: #b85c5c;
+
+  --radius: 0.75rem;
+}
+
+
+/* =========================================================
+   DARK THEME VARIABLES
+========================================================= */
+
+.dark {
+  --background: #171916;
+  --foreground: #f1f2ed;
+
+  --card: #22251f;
+  --card-foreground: #f1f2ed;
+
+  --primary: #7f9270;
+  --primary-hover: #91a482;
+  --primary-light: #293127;
+
+  --secondary: #c98262;
+  --secondary-light: #3a2e27;
+
+  --muted: #292c27;
+  --muted-foreground: #aeb3a9;
+
+  --accent: #343932;
+  --accent-dark: #444a40;
+
+  --border: #393e36;
+
+  --success: #819577;
+  --warning: #c98262;
+  --danger: #c66b6b;
+
+  --radius: 0.75rem;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family:
+    'DM Sans',
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--foreground);
+  font-family: 'DM Sans', sans-serif;
+}
+
+p {
+  color: #6f7068;
+}
+
+.dark p {
+  color: #aeb3a9;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+button.bg-primary,
+a.bg-primary {
+  background: var(--primary) !important;
+  color: #fffdf8 !important;
+  border-color: var(--primary) !important;
+}
+
+button.bg-primary:hover,
+a.bg-primary:hover {
+  background: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(93, 110, 81, 0.18);
+}
+
+
+/* =========================================================
+   INPUTS — LIGHT
+========================================================= */
+
+input,
+textarea,
+select {
+  background: #fffdf8 !important;
+  color: #3e4038 !important;
+
+  border: 1px solid #d8d1c4;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUTS — DARK
+========================================================= */
+
+.dark input,
+.dark textarea,
+.dark select {
+  background: #30342e !important;
+  color: #f5f6f2 !important;
+  border-color: #50564d !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa69c !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #8f968b !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--primary) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(111, 128, 97, 0.12);
+}
+
+
+/* =========================================================
+   TEXT COLORS
+========================================================= */
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
+
+.text-foreground {
+  color: var(--foreground) !important;
+}
+
+
+/* =========================================================
+   BACKGROUND UTILITIES
+========================================================= */
+
+.bg-background {
+  background: var(--background) !important;
+}
+
+.bg-card {
+  background: var(--card) !important;
+}
+
+.bg-primary {
+  background: var(--primary) !important;
+}
+
+.bg-secondary {
+  background: var(--secondary) !important;
+}
+
+.bg-muted {
+  background: var(--muted) !important;
+}
+
+
+/* =========================================================
+   CUSTOM TWINLEARN UTILITIES
+========================================================= */
+
+.tl-primary {
+  color: #6f8061;
+}
+
+.tl-primary-bg {
+  background: #6f8061;
+}
+
+.tl-primary-light {
+  background: #e6ecdf;
+}
+
+.tl-accent {
+  color: #c98262;
+}
+
+.tl-accent-bg {
+  background: #f1ddd2;
+}
+
+.tl-sage-bg {
+  background: #e6ecdf;
+}
+
+.tl-cream {
+  background: #fffdf8;
+}
+
+.tl-background {
+  background: #f7f3ea;
+}
+
+.tl-border {
+  border-color: #e4ded2;
+}
+
+
+/* =========================================================
+   DARK CUSTOM UTILITIES
+========================================================= */
+
+.dark .tl-primary-light {
+  background: #293127;
+}
+
+.dark .tl-sage-bg {
+  background: #293127;
+}
+
+.dark .tl-cream {
+  background: #22251f;
+}
+
+.dark .tl-background {
+  background: #171916;
+}
+
+.dark .tl-border {
+  border-color: #393e36;
+}
+
+
+/* =========================================================
+   PREMIUM CARD
+========================================================= */
+
+.tl-card {
+  background: #fffdf8;
+
+  border: 1px solid #e4ded2;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 20px rgba(62, 64, 56, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tl-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #d8d1c4;
+
+  box-shadow:
+    0 14px 35px rgba(62, 64, 56, 0.08);
+}
+
+.dark .tl-card {
+  background: #22251f;
+
+  border-color: #393e36;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.dark .tl-card:hover {
+  border-color: #4a5146;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+
+.tl-glass {
+  background: rgba(255, 253, 248, 0.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(228, 222, 210, 0.8);
+}
+
+.dark .tl-glass {
+  background: rgba(34, 37, 31, 0.82);
+
+  border-color: rgba(57, 62, 54, 0.85);
+}
+
+
+/* =========================================================
+   HERO BACKGROUND
+========================================================= */
+
+.tl-hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(111, 128, 97, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(201, 130, 98, 0.10),
+      transparent 28%
+    ),
+    #f7f3ea;
+}
+
+.dark .tl-hero {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(111, 128, 97, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(201, 130, 98, 0.08),
+      transparent 28%
+    ),
+    #171916;
+}
+
+
+/* =========================================================
+   DECORATIVE BLOBS
+========================================================= */
+
+.tl-blob {
+  position: absolute;
+
+  border-radius: 999px;
+
+  filter: blur(2px);
+
+  pointer-events: none;
+
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+.tl-blob-sage {
+  background: rgba(111, 128, 97, 0.10);
+}
+
+.tl-blob-peach {
+  background: rgba(201, 130, 98, 0.10);
+
+  animation-delay: -3s;
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(10px, -18px) scale(1.05);
+  }
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FADE UP
+========================================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   FADE IN
+========================================================= */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   SCALE IN
+========================================================= */
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out both;
+}
+
+
+/* =========================================================
+   SLIDE FROM LEFT
+========================================================= */
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   SLIDE FROM RIGHT
+========================================================= */
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SHIMMER
+========================================================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+.tl-shimmer {
+  background:
+    linear-gradient(
+      90deg,
+      #eee9df 25%,
+      #f7f3ea 50%,
+      #eee9df 75%
+    );
+
+  background-size: 1000px 100%;
+
+  animation: shimmer 2s infinite linear;
+}
+
+.dark .tl-shimmer {
+  background:
+    linear-gradient(
+      90deg,
+      #292c27 25%,
+      #343932 50%,
+      #292c27 75%
+    );
+
+  background-size: 1000px 100%;
+}
+
+
+/* =========================================================
+   STAGGER ANIMATIONS
+========================================================= */
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.tl-icon {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.tl-icon:hover {
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.tl-navbar {
+  background: rgba(255, 253, 248, 0.88);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(228, 222, 210, 0.8);
+}
+
+.dark .tl-navbar {
+  background: rgba(34, 37, 31, 0.92);
+
+  border-bottom-color:
+    rgba(57, 62, 54, 0.9);
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.tl-gradient-text {
+  background:
+    linear-gradient(
+      135deg,
+      #6f8061,
+      #8a735c
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   SECTION DIVIDER
+========================================================= */
+
+.tl-divider {
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #e4ded2,
+      transparent
+    );
+}
+
+.dark .tl-divider {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #393e36,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.tl-badge {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #e6ecdf;
+
+  color: #5d6e51;
+
+  border: 1px solid #d5dfcc;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dark .tl-badge {
+  background: #293127;
+
+  color: #a9bb9b;
+
+  border-color: #3d4738;
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.tl-step {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #6f8061;
+
+  color: #fffdf8;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px rgba(111, 128, 97, 0.18);
+}
+
+
+/* =========================================================
+   HOVER LIFT
+========================================================= */
+
+.hover-lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 35px rgba(62, 64, 56, 0.08);
+}
+
+.dark .hover-lift:hover {
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee9df;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9b3a6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999487;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #20231f;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555b53;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7467;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: #dce5d3;
+  color: #4c5d40;
+}
+
+.dark ::selection {
+  background: #45533e;
+  color: #f1f2ed;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #6f8061;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .tl-card {
+    border-radius: 14px;
+  }
+}

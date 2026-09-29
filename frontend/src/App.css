@@ -1,0 +1,408 @@
+/* =====================================================
+   TWINLEARN AI
+   VISIBILITY + PROFESSIONAL UI
+   Existing JSX/content untouched
+===================================================== */
+
+
+/* =====================================================
+   COLOR SYSTEM
+===================================================== */
+
+:root {
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  --secondary-400: #2dd4bf;
+  --secondary-500: #14b8a6;
+  --secondary-600: #0d9488;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+
+  --border: #cbd5e1;
+  --border-subtle: #e2e8f0;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a {
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   ALL BUTTONS
+===================================================== */
+
+button {
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Primary */
+
+.btn-primary {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+
+  border: 1px solid #4f46e5 !important;
+
+  padding: 12px 24px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: #4338ca !important;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+
+/* Secondary */
+
+.btn-secondary {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+
+  border: 1px solid #0d9488 !important;
+
+  padding: 12px 24px;
+}
+
+.btn-secondary:hover {
+  background: #0f766e !important;
+}
+
+
+/* Ghost */
+
+.btn-ghost {
+  background: #ffffff !important;
+  color: #4f46e5 !important;
+
+  border: 1px solid #c7d2fe !important;
+
+  padding: 12px 24px;
+}
+
+.btn-ghost:hover {
+  background: #eef2ff !important;
+  border-color: #4f46e5 !important;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+
+  color: var(--text-primary);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+input,
+textarea,
+select {
+  background: #ffffff !important;
+
+  color: #0f172a !important;
+
+  border: 1px solid #cbd5e1 !important;
+
+  border-radius: 8px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4f46e5 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.12);
+
+  outline: none;
+}
+
+label {
+  color: #0f172a !important;
+}
+
+
+/* =====================================================
+   LANDING PAGE
+===================================================== */
+
+/* Navbar */
+
+nav {
+  background: rgba(255, 255, 255, 0.97) !important;
+
+  border-color: #e2e8f0 !important;
+
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Navbar logo */
+
+nav span {
+  color: #4f46e5;
+}
+
+
+/* Hero */
+
+section {
+  position: relative;
+}
+
+
+/* Hero heading */
+
+section h1 {
+  color: #0f172a !important;
+
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* Hero paragraph */
+
+section p {
+  color: #475569 !important;
+}
+
+
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+
+.grid > div {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.grid > div:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-lg);
+
+  border-color: #c7d2fe !important;
+}
+
+
+/* Feature headings */
+
+.grid h3 {
+  color: #0f172a !important;
+}
+
+
+/* Feature text */
+
+.grid p {
+  color: #475569 !important;
+}
+
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.bg-gradient-to-r {
+  box-shadow:
+    0 15px 35px rgba(79, 70, 229, 0.20);
+}
+
+
+/* CTA button must stay visible */
+
+.bg-gradient-to-r button {
+  background: #ffffff !important;
+
+  color: #4f46e5 !important;
+
+  border: 1px solid #ffffff !important;
+}
+
+.bg-gradient-to-r button:hover {
+  background: #eef2ff !important;
+
+  color: #3730a3 !important;
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge {
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  section {
+    overflow: hidden;
+  }
+
+  section h1 {
+    font-size: 42px !important;
+  }
+
+  section p {
+    font-size: 16px !important;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  section h1 {
+    font-size: 36px !important;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark nav {
+  background: #0f172a !important;
+
+  border-color: #334155 !important;
+}
+
+body.dark section h1,
+body.dark section h2,
+body.dark section h3 {
+  color: #f8fafc !important;
+}
+
+body.dark section p {
+  color: #cbd5e1 !important;
+}
+
+body.dark .card {
+  background: #1e293b;
+  border-color: #334155;
+}

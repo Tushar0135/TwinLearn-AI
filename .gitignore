@@ -1,0 +1,58 @@
+# Python virtual environment
+venv/
+.venv/
+backend/venv/
+
+# Python cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Logs
+logs/
+backend/logs/
+
+# Generated lecture files
+uploads/
+backend/uploads/
+
+extracted_text/
+backend/extracted_text/
+
+
+# Audio / video files
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.mp4
+*.webm
+
+# Test/cache
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+# ChromaDB generated data
+chroma_db/
+
+# Generated audio processing outputs
+backend/audio_processing/outputs/
+
+postman_collection.json
